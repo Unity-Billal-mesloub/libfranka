@@ -11,6 +11,7 @@ while the `Franka Control Interface (FCI) documentation <https://frankarobotics.
 
 To find the appropriate version to use, please refer to the `Robot System Version Compatibility <https://frankarobotics.github.io/docs/libfranka/docs/compatibility_with_images.html>`_.
 
+
 Key Features
 ------------
 
@@ -81,10 +82,10 @@ substitute `<ubuntu_codename>` with your Ubuntu codename (e.g., `focal`, `jammy`
 .. code-block:: bash
 
    # Download package
-   wget https://github.com/frankarobotics/libfranka/releases/download/<libfranka_version>/libfranka_<libfranka_version>_<ubuntu_codename>_amd64.deb
+   wget https://github.com/Unity-Billal-mesloub/libfranka/releases/download/<libfranka_version>/libfranka_<libfranka_version>_<ubuntu_codename>_amd64.deb
 
    # Download checksum
-   wget https://github.com/frankarobotics/libfranka/releases/download/<libfranka_version>/libfranka_<libfranka_version>_<ubuntu_codename>_amd64.deb.sha256
+   wget https://github.com/Unity-Billal-mesloub/libfranka/releases/download/<libfranka_version>/libfranka_<libfranka_version>_<ubuntu_codename>_amd64.deb.sha256
 
    # Verify package integrity
    sha256sum -c libfranka_<libfranka_version>_<ubuntu_codename>_amd64.deb.sha256
@@ -100,15 +101,15 @@ The following example installs **libfranka 0.19.0** on **Ubuntu 22.04 (Jammy)**:
 .. code-block:: bash
 
 
-   wget https://github.com/frankarobotics/libfranka/releases/download/0.19.0/libfranka_0.19.0_jammy_amd64.deb
-   wget https://github.com/frankarobotics/libfranka/releases/download/0.19.0/libfranka_0.19.0_jammy_amd64.deb.sha256
+   wget https://github.com/Unity-Billal-mesloub/libfranka/releases/download/0.19.0/libfranka_0.19.0_jammy_amd64.deb
+   wget https://github.com/Unity-Billal-mesloub/libfranka/releases/download/0.19.0/libfranka_0.19.0_jammy_amd64.deb.sha256
    sha256sum -c libfranka_0.19.0_jammy_amd64.deb.sha256
    sudo dpkg -i libfranka_0.19.0_jammy_amd64.deb
 
 .. tip::
 
    All released versions, packages, and checksums are available on the
-   `GitHub Releases page <https://github.com/frankarobotics/libfranka/releases>`_.
+   `GitHub Releases page <https://github.com/Unity-Billal-mesloub/libfranka/releases>`_.
 
 
 .. _building-with-docker:
@@ -133,7 +134,7 @@ Clone the Repository
 
 .. code-block:: bash
 
-   git clone --recurse-submodules https://github.com/frankarobotics/libfranka.git
+   git clone --recurse-submodules https://github.com/Unity-Billal-mesloub/libfranka.git
    cd libfranka
    git checkout 0.19.0  # or your desired version
 
@@ -305,7 +306,7 @@ Follow these steps **in order**. All dependencies are built with static linking.
 
 .. code-block:: bash
 
-   git clone --depth 1 --branch 1.0.2 https://github.com/ros/console_bridge.git
+   git clone --depth 1 --branch 1.0.2 https://github.com/Unity-Billal-mesloub/console_bridge.git
    cd console_bridge
    mkdir build && cd build
 
@@ -326,7 +327,7 @@ Follow these steps **in order**. All dependencies are built with static linking.
 
 .. code-block:: bash
 
-   git clone --depth 1 --branch 1.0.5 https://github.com/ros/urdfdom_headers.git
+   git clone --depth 1 --branch 1.0.5 https://github.com/Unity-Billal-mesloub/urdfdom_headers.git
    cd urdfdom_headers
    mkdir build && cd build
 
@@ -345,9 +346,9 @@ Follow these steps **in order**. All dependencies are built with static linking.
 
 .. code-block:: bash
 
-   wget https://raw.githubusercontent.com/frankarobotics/libfranka/main/.ci/urdfdom.patch
+   wget https://raw.githubusercontent.com/Unity-Billal-mesloub/libfranka/main/.ci/urdfdom.patch
 
-   git clone --depth 1 --branch 4.0.0 https://github.com/ros/urdfdom.git
+   git clone --depth 1 --branch 4.0.0 https://github.com/Unity-Billal-mesloub/urdfdom.git
    cd urdfdom
 
    git apply ../urdfdom.patch
@@ -370,7 +371,7 @@ Follow these steps **in order**. All dependencies are built with static linking.
 .. code-block:: bash
 
    git clone --depth 1 --recurse-submodules --shallow-submodules \
-       --branch v5.4.3 https://github.com/assimp/assimp.git
+       --branch v5.4.3 https://github.com/Unity-Billal-mesloub/assimp.git
    cd assimp && mkdir build && cd build
    cmake .. -DBoost_USE_STATIC_LIBS=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
        -DBUILD_SHARED_LIBS=OFF -DASSIMP_BUILD_TESTS=OFF \
@@ -382,9 +383,9 @@ Follow these steps **in order**. All dependencies are built with static linking.
 
 .. code-block:: bash
 
-   wget https://raw.githubusercontent.com/frankarobotics/libfranka/main/.ci/pinocchio.patch
+   wget https://raw.githubusercontent.com/Unity-Billal-mesloub/libfranka/main/.ci/pinocchio.patch
    git clone --depth 1 --recurse-submodules --shallow-submodules \
-       --branch v3.4.0 https://github.com/stack-of-tasks/pinocchio.git
+       --branch v3.4.0 https://github.com/Unity-Billal-mesloub/pinocchio.git
    cd pinocchio && git apply ../pinocchio.patch
    mkdir build && cd build
    cmake .. -DBoost_USE_STATIC_LIBS=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
@@ -399,7 +400,7 @@ Build libfranka
 
 .. code-block:: bash
 
-   git clone --recurse-submodules https://github.com/frankarobotics/libfranka.git
+   git clone --recurse-submodules https://github.com/Unity-Billal-mesloub/libfranka.git
    cd libfranka
    git checkout 0.19.0
    git submodule update --init --recursive
@@ -586,12 +587,7 @@ Troubleshooting
 
 **Network connection issues**
 
-See the `Troubleshooting Network <https://frankarobotics.github.io/docs/libfranka/docs/troubleshooting.html>`_ guide.
-
-License
--------
-
-``libfranka`` is licensed under the `Apache 2.0 license <https://www.apache.org/licenses/LICENSE-2.0.html>`_.
+See the `Troubleshooting Network <https://Unity-Billal-mesloub.github.io/docs/libfranka/docs>`_ guide.
 
 pylibfranka Installation and Usage Guide
 -----------------------------------------
