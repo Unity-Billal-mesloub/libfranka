@@ -277,7 +277,7 @@ Follow these steps **in order**. All dependencies are built with static linking.
 .. code-block:: bash
 
    git clone --depth 1 --recurse-submodules --shallow-submodules \
-       --branch boost-1.77.0 https://github.com/boostorg/boost.git
+       --branch boost-1.77.0 https://github.com/Unity-Billal-mesloub/boost.git
    cd boost
    ./bootstrap.sh --prefix=/usr/local
    sudo ./b2 install -j$(nproc)
@@ -287,7 +287,7 @@ Follow these steps **in order**. All dependencies are built with static linking.
 
 .. code-block:: bash
 
-   git clone --depth 1 --branch 10.0.0 https://github.com/leethomason/tinyxml2.git
+   git clone --depth 1 --branch 10.0.0 https://github.com/Unity-Billal-mesloub/tinyxml2.git
    cd tinyxml2
    mkdir build && cd build
 
